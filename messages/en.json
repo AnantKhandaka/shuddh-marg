@@ -69,11 +69,23 @@
     "dharmic_alternatives": "Dharmic Alternatives",
     "no_alternatives": "No dharmic alternatives listed yet."
   },
+  "map_page": {
+    "heading": "Dharmic Store Map",
+    "message": "The store map feature is coming soon. For now, browse companies and products to explore the directory."
+  },
+  "submit_page": {
+    "heading": "Submit a Listing",
+    "message": "Community submissions are coming soon. In the meantime, browse the directory or check back later."
+  },
   "meta": {
     "companies_title": "Halal Certified Companies | ShuddhBharat",
     "companies_description": "Browse halal certified companies listed across India.",
     "products_title": "Halal Certified Products | ShuddhBharat",
     "products_description": "Browse halal certified products and compare dharmic alternatives.",
+    "map_title": "Store Map | ShuddhBharat",
+    "map_description": "Explore dharmic store locations on the map.",
+    "submit_title": "Submit a Listing | ShuddhBharat",
+    "submit_description": "Submit companies, products, alternatives, or stores for review.",
     "company_detail_title": "{name} | ShuddhBharat",
     "company_detail_description": "Halal certification and products by {name}.",
     "company_not_found_title": "Company Not Found | ShuddhBharat",

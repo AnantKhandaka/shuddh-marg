@@ -4,8 +4,10 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import ProductCard from '@/components/product/ProductCard'
 import Badge from '@/components/ui/Badge'
-import { getCompanyBySlug, getProductsByCompany } from '@/lib/queries'
+import { getProductsByCompany } from '@/lib/queries'
+import { getSupabaseAdmin } from '@/lib/supabase'
 import { getTranslations } from 'next-intl/server'
+import type { Company } from '@/types/database'
 
 type Props = {
 	params: Promise<{ locale: string; slug: string }>
@@ -16,12 +18,29 @@ function withLocale(path: string, locale: string) {
 	return `/${locale}${path}`
 }
 
+async function getCompanyBySlugForDetail(slug: string): Promise<Company | null> {
+	const admin = getSupabaseAdmin()
+	const { data, error } = await admin.from('companies').select('*').eq('slug', slug).maybeSingle()
+
+	if (error) {
+		throw error
+	}
+
+	return data
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
 	const { locale, slug } = await params
 	const t = await getTranslations({ locale, namespace: 'meta' })
 
 	try {
-		const company = await getCompanyBySlug(slug)
+		const company = await getCompanyBySlugForDetail(slug)
+		if (!company) {
+			return {
+				title: t('company_not_found_title'),
+				description: t('company_not_found_description'),
+			}
+		}
 		return {
 			title: t('company_detail_title', { name: company.name }),
 			description: company.description ?? t('company_detail_description', { name: company.name }),
@@ -37,7 +56,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function CompanyDetailPage({ params }: Props) {
 	const { locale, slug } = await params
 	const t = await getTranslations({ locale, namespace: 'pages' })
-	const company = await getCompanyBySlug(slug).catch(() => null)
+	const company = await getCompanyBySlugForDetail(slug).catch(() => null)
 	if (!company) {
 		notFound()
 	}

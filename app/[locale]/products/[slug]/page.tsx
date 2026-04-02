@@ -4,8 +4,10 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import AlternativeCard from '@/components/alternative/AlternativeCard'
 import Badge from '@/components/ui/Badge'
-import { getAlternativesByProduct, getProductBySlug } from '@/lib/queries'
+import { getAlternativesByProduct } from '@/lib/queries'
+import { getSupabaseAdmin } from '@/lib/supabase'
 import { getTranslations } from 'next-intl/server'
+import type { Product } from '@/types/database'
 
 type Props = {
 	params: Promise<{ locale: string; slug: string }>
@@ -16,11 +18,32 @@ function withLocale(path: string, locale: string) {
 	return `/${locale}${path}`
 }
 
+async function getProductBySlugForDetail(slug: string): Promise<(Product & { companies: { name: string; slug: string; logo_url: string | null } | null }) | null> {
+	const admin = getSupabaseAdmin()
+	const { data, error } = await admin
+		.from('products')
+		.select('*, companies(name, slug, logo_url)')
+		.eq('slug', slug)
+		.maybeSingle()
+
+	if (error) {
+		throw error
+	}
+
+	return data
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
 	const { locale, slug } = await params
 	const t = await getTranslations({ locale, namespace: 'meta' })
 	try {
-		const product = await getProductBySlug(slug)
+		const product = await getProductBySlugForDetail(slug)
+		if (!product) {
+			return {
+				title: t('product_not_found_title'),
+				description: t('product_not_found_description'),
+			}
+		}
 		return {
 			title: t('product_detail_title', { name: product.name }),
 			description: product.description ?? t('product_detail_description', { name: product.name }),
@@ -36,7 +59,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function ProductDetailPage({ params }: Props) {
 	const { locale, slug } = await params
 	const t = await getTranslations({ locale, namespace: 'pages' })
-	const product = await getProductBySlug(slug).catch(() => null)
+	const product = await getProductBySlugForDetail(slug).catch(() => null)
 	if (!product) {
 		notFound()
 	}

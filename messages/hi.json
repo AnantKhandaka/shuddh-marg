@@ -69,11 +69,23 @@
     "dharmic_alternatives": "धार्मिक विकल्प",
     "no_alternatives": "अभी तक कोई धार्मिक विकल्प सूचीबद्ध नहीं है।"
   },
+  "map_page": {
+    "heading": "धार्मिक स्टोर मैप",
+    "message": "स्टोर मैप फ़ीचर जल्द आ रहा है। तब तक, डायरेक्टरी देखने के लिए कंपनियाँ और उत्पाद ब्राउज़ करें।"
+  },
+  "submit_page": {
+    "heading": "सूची सबमिट करें",
+    "message": "कम्युनिटी सबमिशन जल्द आ रहे हैं। तब तक, डायरेक्टरी देखें या बाद में वापस आएँ।"
+  },
   "meta": {
     "companies_title": "हलाल प्रमाणित कंपनियाँ | ShuddhBharat",
     "companies_description": "भारत भर की हलाल प्रमाणित कंपनियाँ देखें।",
     "products_title": "हलाल प्रमाणित उत्पाद | ShuddhBharat",
     "products_description": "हलाल प्रमाणित उत्पाद देखें और धार्मिक विकल्पों की तुलना करें।",
+    "map_title": "स्टोर मैप | ShuddhBharat",
+    "map_description": "मानचित्र पर धार्मिक स्टोर स्थान देखें।",
+    "submit_title": "सूची सबमिट करें | ShuddhBharat",
+    "submit_description": "समीक्षा के लिए कंपनियाँ, उत्पाद, विकल्प, या स्टोर सबमिट करें।",
     "company_detail_title": "{name} | ShuddhBharat",
     "company_detail_description": "{name} के हलाल प्रमाणन और उत्पाद विवरण।",
     "company_not_found_title": "कंपनी नहीं मिली | ShuddhBharat",
