@@ -7,7 +7,7 @@ import Badge from '@/components/ui/Badge'
 import { getProductsByCompany } from '@/lib/queries'
 import { getSupabaseAdmin } from '@/lib/supabase'
 import { getTranslations } from 'next-intl/server'
-import type { Company } from '@/types/database'
+import type { Company, Product } from '@/types/database'
 
 type Props = {
 	params: Promise<{ locale: string; slug: string }>
@@ -18,12 +18,30 @@ function withLocale(path: string, locale: string) {
 	return `/${locale}${path}`
 }
 
+function isCompany(value: unknown): value is Company {
+	return (
+		typeof value === 'object' &&
+		value !== null &&
+		'id' in value &&
+		'name' in value &&
+		'slug' in value
+	)
+}
+
 async function getCompanyBySlugForDetail(slug: string): Promise<Company | null> {
 	const admin = getSupabaseAdmin()
-	const { data, error } = await admin.from('companies').select('*').eq('slug', slug).maybeSingle()
+	const { data, error } = await admin
+		.from('companies')
+		.select('*')
+		.filter('slug', 'eq', slug)
+		.maybeSingle()
 
 	if (error) {
 		throw error
+	}
+
+	if (!isCompany(data)) {
+		return null
 	}
 
 	return data
@@ -61,9 +79,20 @@ export default async function CompanyDetailPage({ params }: Props) {
 		notFound()
 	}
 
-	const products = await getProductsByCompany(company.id).catch(() => [])
+	const products = (await getProductsByCompany(company.id).catch(() => [])) as Product[]
 	const productsWithCompany = products.map((product) => ({
-		...product,
+		id: product.id,
+		company_id: product.company_id,
+		name: product.name,
+		slug: product.slug,
+		description: product.description,
+		image_url: product.image_url,
+		barcode: product.barcode,
+		category: product.category,
+		halal_logo_visible: product.halal_logo_visible,
+		is_verified: product.is_verified,
+		created_at: product.created_at,
+		updated_at: product.updated_at,
 		companies: {
 			name: company.name,
 			slug: company.slug,
