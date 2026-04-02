@@ -1,0 +1,91 @@
+{
+  "nav": {
+    "home": "होम",
+    "companies": "कंपनियाँ",
+    "products": "उत्पाद",
+    "map": "स्टोर मैप",
+    "submit": "सबमिट करें"
+  },
+  "home": {
+    "hero_title": "जानो क्या है शुद्ध",
+    "hero_subtitle": "हलाल प्रमाणित ब्रांड खोजें और हर हिंदू, सिख और जैन के लिए शुद्ध धार्मिक विकल्प चुनें।",
+    "search_placeholder": "कंपनी या उत्पाद खोजें...",
+    "browse_companies": "कंपनियाँ देखें",
+    "browse_products": "उत्पाद देखें"
+  },
+  "common": {
+    "verified": "सत्यापित",
+    "alternatives": "धार्मिक विकल्प",
+    "buy_now": "अभी खरीदें",
+    "view_details": "विवरण देखें",
+    "category": "श्रेणी",
+    "loading": "लोड हो रहा है...",
+    "no_results": "कोई परिणाम नहीं मिला"
+  },
+  "badges": {
+    "halal": "हलाल प्रमाणित",
+    "verified": "सत्यापित",
+    "dharmic": "धार्मिक",
+    "vegetarian": "शाकाहारी",
+    "vegan": "वीगन",
+    "jhatka": "झटका"
+  },
+  "footer": {
+    "tagline": "जानो क्या है शुद्ध। चुनो जो है धार्मिक।",
+    "copyright": "© 2025 शुद्धभारत। भारत के लिए समर्पण के साथ बनाया गया।"
+  },
+  "pages": {
+    "all": "सभी",
+    "company": "कंपनी",
+    "product": "उत्पाद",
+    "home": "होम",
+    "companies": "कंपनियाँ",
+    "products": "उत्पाद",
+    "total_companies": "कुल कंपनियाँ",
+    "total_products": "कुल उत्पाद",
+    "total_alternatives": "कुल विकल्प",
+    "halal_companies_heading": "हलाल प्रमाणित कंपनियाँ",
+    "view_all_companies": "सभी कंपनियाँ देखें",
+    "halal_products_heading": "हलाल प्रमाणित उत्पाद",
+    "view_all_products": "सभी उत्पाद देखें",
+    "how_it_works": "यह कैसे काम करता है",
+    "step_search": "ब्रांड या उत्पाद खोजें",
+    "step_details": "हलाल प्रमाणन विवरण देखें",
+    "step_alternatives": "शुद्ध धार्मिक विकल्प खोजें",
+    "buy_link_soon": "खरीद लिंक जल्द आएगा",
+    "hindu": "हिंदू",
+    "sikh": "सिख",
+    "jain": "जैन",
+    "listed_companies": "{count} सूचीबद्ध कंपनियाँ",
+    "listed_products": "{count} सूचीबद्ध उत्पाद",
+    "halal_by": "{body} द्वारा हलाल प्रमाणित",
+    "halal_cert_body": "हलाल प्रमाणन संस्था",
+    "certificate_number": "प्रमाणपत्र संख्या",
+    "website": "वेबसाइट",
+    "not_listed": "सूचीबद्ध नहीं",
+    "products_by": "{name} के उत्पाद",
+    "no_products_company": "इस कंपनी के लिए कोई उत्पाद सूचीबद्ध नहीं है।",
+    "category": "श्रेणी",
+    "dharmic_alternatives": "धार्मिक विकल्प",
+    "no_alternatives": "अभी तक कोई धार्मिक विकल्प सूचीबद्ध नहीं है।"
+  },
+  "meta": {
+    "companies_title": "हलाल प्रमाणित कंपनियाँ | ShuddhBharat",
+    "companies_description": "भारत भर की हलाल प्रमाणित कंपनियाँ देखें।",
+    "products_title": "हलाल प्रमाणित उत्पाद | ShuddhBharat",
+    "products_description": "हलाल प्रमाणित उत्पाद देखें और धार्मिक विकल्पों की तुलना करें।",
+    "company_detail_title": "{name} | ShuddhBharat",
+    "company_detail_description": "{name} के हलाल प्रमाणन और उत्पाद विवरण।",
+    "company_not_found_title": "कंपनी नहीं मिली | ShuddhBharat",
+    "company_not_found_description": "मांगी गई कंपनी उपलब्ध नहीं है।",
+    "product_detail_title": "{name} | ShuddhBharat",
+    "product_detail_description": "{name} के विवरण और विकल्प।",
+    "product_not_found_title": "उत्पाद नहीं मिला | ShuddhBharat",
+    "product_not_found_description": "मांगा गया उत्पाद उपलब्ध नहीं है।"
+  },
+  "error": {
+    "title": "कुछ गलत हो गया",
+    "description": "कृपया पेज दोबारा लोड करें।",
+    "retry": "फिर से प्रयास करें"
+  }
+}
