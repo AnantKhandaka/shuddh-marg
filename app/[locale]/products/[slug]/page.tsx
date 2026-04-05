@@ -7,7 +7,7 @@ import Badge from '@/components/ui/Badge'
 import { getAlternativesByProduct } from '@/lib/queries'
 import { getSupabaseAdmin } from '@/lib/supabase'
 import { getTranslations } from 'next-intl/server'
-import type { Product } from '@/types/database'
+import type { Alternative, Product } from '@/types/database'
 
 type Props = {
 	params: Promise<{ locale: string; slug: string }>
@@ -23,14 +23,14 @@ async function getProductBySlugForDetail(slug: string): Promise<(Product & { com
 	const { data, error } = await admin
 		.from('products')
 		.select('*, companies(name, slug, logo_url)')
-		.eq('slug', slug)
+		.eq('slug', slug as never)
 		.maybeSingle()
 
 	if (error) {
 		throw error
 	}
 
-	return data
+	return data as (Product & { companies: { name: string; slug: string; logo_url: string | null } | null }) | null
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -64,7 +64,7 @@ export default async function ProductDetailPage({ params }: Props) {
 		notFound()
 	}
 
-	const alternatives = await getAlternativesByProduct(product.id).catch(() => [])
+	const alternatives = (await getAlternativesByProduct(product.id).catch(() => [])) as Alternative[]
 
 	return (
 		<main className="bg-orange-50 px-4 py-8 sm:px-6 lg:px-8">

@@ -10,7 +10,10 @@ if (!supabaseUrl || !supabaseAnonKey) {
   )
 }
 
-export const supabase = createClient<Database>(supabaseUrl, supabaseAnonKey)
+const publicUrl: string = supabaseUrl
+const publicAnonKey: string = supabaseAnonKey
+
+export const supabase = createClient<Database>(publicUrl, publicAnonKey)
 
 export function getSupabaseAdmin() {
   if (typeof window !== 'undefined') {
@@ -23,5 +26,5 @@ export function getSupabaseAdmin() {
     throw new Error('Missing SUPABASE_SERVICE_ROLE_KEY in .env.local for server-side admin operations.')
   }
 
-  return createClient<Database>(supabaseUrl, serviceRoleKey)
+  return createClient<Database>(publicUrl, serviceRoleKey)
 }
