@@ -81,7 +81,7 @@ export default function AdminLayout({ children }: Props) {
 	return (
 		<div className="min-h-screen bg-gray-50">
 			<aside className="fixed left-0 top-0 flex h-screen w-60 flex-col border-r border-gray-200 bg-white">
-				<div className="px-5 py-5 text-xl font-bold text-orange-800">ShuddhBharat Admin</div>
+				<div className="px-5 py-5 text-xl font-bold text-orange-800">Shuddhmarg Admin</div>
 
 				<nav className="flex-1 space-y-1 px-3">
 					{navItems.map((item) => {

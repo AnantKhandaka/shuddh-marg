@@ -32,7 +32,7 @@
   },
   "footer": {
     "tagline": "Jaano kya hai shuddh. Chuno jo hai dharmic.",
-    "copyright": "© 2025 ShuddhBharat. Made with devotion for Bharat."
+    "copyright": "© 2025 Shuddhmarg. Made with devotion for Bharat."
   },
   "pages": {
     "all": "All",
@@ -78,21 +78,21 @@
     "message": "Community submissions are coming soon. In the meantime, browse the directory or check back later."
   },
   "meta": {
-    "companies_title": "Halal Certified Companies | ShuddhBharat",
+    "companies_title": "Halal Certified Companies | Shuddhmarg",
     "companies_description": "Browse halal certified companies listed across India.",
-    "products_title": "Halal Certified Products | ShuddhBharat",
+    "products_title": "Halal Certified Products | Shuddhmarg",
     "products_description": "Browse halal certified products and compare dharmic alternatives.",
-    "map_title": "Store Map | ShuddhBharat",
+    "map_title": "Store Map | Shuddhmarg",
     "map_description": "Explore dharmic store locations on the map.",
-    "submit_title": "Submit a Listing | ShuddhBharat",
+    "submit_title": "Submit a Listing | Shuddhmarg",
     "submit_description": "Submit companies, products, alternatives, or stores for review.",
-    "company_detail_title": "{name} | ShuddhBharat",
+    "company_detail_title": "{name} | Shuddhmarg",
     "company_detail_description": "Halal certification and products by {name}.",
-    "company_not_found_title": "Company Not Found | ShuddhBharat",
+    "company_not_found_title": "Company Not Found | Shuddhmarg",
     "company_not_found_description": "Requested company is not available.",
-    "product_detail_title": "{name} | ShuddhBharat",
+    "product_detail_title": "{name} | Shuddhmarg",
     "product_detail_description": "Details and alternatives for {name}.",
-    "product_not_found_title": "Product Not Found | ShuddhBharat",
+    "product_not_found_title": "Product Not Found | Shuddhmarg",
     "product_not_found_description": "Requested product is not available."
   },
   "error": {

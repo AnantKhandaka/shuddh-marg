@@ -35,7 +35,7 @@ export default function AdminLoginPage() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-gray-50 px-4">
       <form onSubmit={handleSubmit} className="w-full max-w-md rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
-        <h1 className="text-2xl font-bold text-orange-800">ShuddhBharat</h1>
+        <h1 className="text-2xl font-bold text-orange-800">Shuddhmarg</h1>
         <p className="mt-1 text-sm text-gray-600">Admin Login</p>
 
         <div className="mt-5 space-y-4">

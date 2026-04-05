@@ -6,7 +6,7 @@ import { getMessages } from 'next-intl/server'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'ShuddhBharat — Discover Pure Dharmic Products',
+  title: 'Shuddhmarg — Discover Pure Dharmic Products',
   description: 'Find halal-certified brands and discover pure dharmic alternatives for every Hindu, Sikh, and Jain.',
 }
 

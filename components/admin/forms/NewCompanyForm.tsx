@@ -4,6 +4,7 @@ import { useRouter } from 'next/navigation'
 import { ChangeEvent, FormEvent, useMemo, useState } from 'react'
 import Toast from '@/components/admin/Toast'
 import Button from '@/components/ui/Button'
+import { slugify } from '@/lib/utils'
 
 type CompanyFormState = {
   name: string
@@ -35,13 +36,6 @@ const initialState: CompanyFormState = {
   logo_url: '',
 }
 
-const toSlug = (value: string) =>
-  value
-    .toLowerCase()
-    .trim()
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-+|-+$/g, '')
-
 export default function NewCompanyForm() {
   const router = useRouter()
   const [form, setForm] = useState<CompanyFormState>(initialState)
@@ -61,7 +55,7 @@ export default function NewCompanyForm() {
     setForm((prev) => ({
       ...prev,
       name,
-      slug: slugTouched ? prev.slug : toSlug(name),
+      slug: slugTouched ? prev.slug : slugify(name),
     }))
   }
 
@@ -134,7 +128,7 @@ export default function NewCompanyForm() {
             value={form.slug}
             onChange={(event) => {
               setSlugTouched(true)
-              setField('slug', toSlug(event.target.value))
+              setField('slug', slugify(event.target.value))
             }}
             className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm"
             required

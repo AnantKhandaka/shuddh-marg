@@ -60,7 +60,7 @@ export default function Navbar() {
 		<header className="sticky top-0 z-50 border-b border-orange-100 bg-white/95 shadow-sm backdrop-blur">
 			<nav className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
 				<Link href={withLocale('/', locale)} className="text-xl font-bold text-orange-700">
-					ShuddhBharat
+					Shuddhmarg
 				</Link>
 
 				<ul className="hidden items-center gap-6 md:flex">
